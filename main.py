@@ -227,9 +227,11 @@ if __name__ == "__main__":
 
     init(autoreset=True)
 
+    dc_token = os.getenv('DISCORD_TOKEN')
+
     token_file = 'bot_token.txt'
     if not os.path.exists(token_file):
-        bot_token = input("Enter the bot token: ")
+        bot_token = dc_token
         with open(token_file, 'w') as f:
             f.write(bot_token)
     else:
